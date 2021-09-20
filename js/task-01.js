@@ -1,8 +1,9 @@
 const liItem = document.querySelectorAll(".item");
 console.log(`В списке ${liItem.length} категории.`);
 
-const ulCategories = [...liItem].map(categories => `Категория: ${categories.children[0].textContent}
-Количество элементов: ${categories.children[1].children.length}`).join("\n");
-console.log(ulCategories);
-
-
+const ulCategories = document.querySelectorAll(".item");
+ulCategories.forEach(element => {
+	console.log(`Категория:` + element.firstElementChild.textContent)
+	console.log(`Количество элементов:` + element.lastElementChild.children.length)
+ })
+	 
