@@ -7,9 +7,12 @@ const ingredients = [
   'Приправы',
 ];
 
-
 const ulList = document.getElementById("ingredients");
 
-const list = ingredients.reduce((acc, item) => acc + `<li>${item}</li>`,"");
 
-ulList.innerHTML = list;
+const list = ingredients.map((ingredient) => {
+  const items = document.createElement("li");
+  items.innerHTML = ingredient;
+  return items;
+});
+ulList.append(...list);
